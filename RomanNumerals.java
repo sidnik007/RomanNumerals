@@ -1,8 +1,10 @@
+import java.util.List;
+
 enum RomanDigit{
     IV(4),
     I(1),
     ;
-    
+
     public final int value;
 
     RomanDigit(final int value) {
@@ -17,18 +19,7 @@ public class RomanNumerals {
 
         String romanDigit;
         int digitValue;
-        RomanDigit rd;
-        {
-            rd = RomanDigit.IV;
-            romanDigit = rd.name();
-            digitValue = rd.value;
-            while (roman.startsWith(romanDigit)) {
-                number += digitValue;
-                roman = roman.substring(romanDigit.length());
-            }
-        }
-        {
-            rd = RomanDigit.I;
+        for (RomanDigit rd : List.of(RomanDigit.IV, RomanDigit.I)) {
             romanDigit = rd.name();
             digitValue = rd.value;
             while (roman.startsWith(romanDigit)) {
@@ -44,18 +35,7 @@ public class RomanNumerals {
 
         String romanDigit;
         int digitValue;
-        RomanDigit rd;
-        {
-            rd = RomanDigit.IV;
-            romanDigit = rd.name();
-            digitValue = rd.value;
-            while (number >= digitValue) {
-                roman += romanDigit;
-                number -= digitValue;
-            }
-        }
-        {
-            rd = RomanDigit.I;
+        for (RomanDigit rd : List.of(RomanDigit.IV, RomanDigit.I)) {
             romanDigit = rd.name();
             digitValue = rd.value;
             while (number >= digitValue) {
