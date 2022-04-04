@@ -1,4 +1,3 @@
-import java.util.List;
 
 enum RomanDigit{
     IV(4),
@@ -17,7 +16,7 @@ public class RomanNumerals {
     public static int parseRoman(String roman) {
         int number = 0;
 
-        for (RomanDigit rd : List.of(RomanDigit.IV, RomanDigit.I)) {
+        for (RomanDigit rd : RomanDigit.values()) {
             while (roman.startsWith(rd.name())) {
                 number += rd.value;
                 roman = roman.substring(rd.name().length());
@@ -29,7 +28,7 @@ public class RomanNumerals {
     public static String toRoman(int number) {
         String roman = "";
 
-        for (RomanDigit rd : List.of(RomanDigit.IV, RomanDigit.I)) {
+        for (RomanDigit rd : RomanDigit.values()) {
             while (number >= rd.value) {
                 roman += rd.name();
                 number -= rd.value;
