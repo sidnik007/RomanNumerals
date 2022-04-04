@@ -1,19 +1,21 @@
 public class RomanNumerals {
 
-    public static int parseRoman(final String roman) {
+    public static int parseRoman(String roman) {
         int number = 0;
 
-        if (roman.equals("I")) {
+        while (roman.startsWith("I")) {
             number += 1;
+            roman = roman.substring(1);
         }
         return number;
     }
 
-    public static String toRoman(final int number) {
+    public static String toRoman(int number) {
         String roman = "";
 
-        if (number == 1) {
+        while (number >= 1) {
             roman += "I";
+            number -= 1;
         }
         return roman;
     }
