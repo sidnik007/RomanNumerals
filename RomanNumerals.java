@@ -17,17 +17,20 @@ public class RomanNumerals {
 
         String romanDigit;
         int digitValue;
+        RomanDigit rd;
         {
-            romanDigit = RomanDigit.IV.name();
-            digitValue = RomanDigit.IV.value;
+            rd = RomanDigit.IV;
+            romanDigit = rd.name();
+            digitValue = rd.value;
             while (roman.startsWith(romanDigit)) {
                 number += digitValue;
                 roman = roman.substring(romanDigit.length());
             }
         }
         {
-            romanDigit = RomanDigit.I.name();
-            digitValue = RomanDigit.I.value;
+            rd = RomanDigit.I;
+            romanDigit = rd.name();
+            digitValue = rd.value;
             while (roman.startsWith(romanDigit)) {
                 number += digitValue;
                 roman = roman.substring(romanDigit.length());
@@ -41,18 +44,20 @@ public class RomanNumerals {
 
         String romanDigit;
         int digitValue;
-
+        RomanDigit rd;
         {
-            romanDigit = RomanDigit.IV.name();
-            digitValue = RomanDigit.IV.value;
+            rd = RomanDigit.IV;
+            romanDigit = rd.name();
+            digitValue = rd.value;
             while (number >= digitValue) {
                 roman += romanDigit;
                 number -= digitValue;
             }
         }
         {
-            romanDigit = RomanDigit.I.name();
-            digitValue = RomanDigit.I.value;
+            rd = RomanDigit.I;
+            romanDigit = rd.name();
+            digitValue = rd.value;
             while (number >= digitValue) {
                 roman += romanDigit;
                 number -= digitValue;
