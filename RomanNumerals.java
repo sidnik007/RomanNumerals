@@ -3,14 +3,23 @@ public class RomanNumerals {
     public static int parseRoman(String roman) {
         int number = 0;
 
-        while (roman.startsWith("IV")) {
-            number += 4;
-            roman = roman.substring("IV".length());
+        String romanDigit;
+        int digitValue;
+        {
+            romanDigit = "IV";
+            digitValue = 4;
+            while (roman.startsWith(romanDigit)) {
+                number += digitValue;
+                roman = roman.substring(romanDigit.length());
+            }
         }
-
-        while (roman.startsWith("I")) {
-            number += 1;
-            roman = roman.substring("I".length());
+        {
+            romanDigit = "I";
+            digitValue = 1;
+            while (roman.startsWith(romanDigit)) {
+                number += digitValue;
+                roman = roman.substring(romanDigit.length());
+            }
         }
         return number;
     }
@@ -18,14 +27,24 @@ public class RomanNumerals {
     public static String toRoman(int number) {
         String roman = "";
 
-        while (number >= 4) {
-            roman += "IV";
-            number -= 4;
-        }
+        String romanDigit;
+        int digitValue;
 
-        while (number >= 1) {
-            roman += "I";
-            number -= 1;
+        {
+            romanDigit = "IV";
+            digitValue = 4;
+            while (number >= digitValue) {
+                roman += romanDigit;
+                number -= digitValue;
+            }
+        }
+        {
+            romanDigit = "I";
+            digitValue = 1;
+            while (number >= digitValue) {
+                roman += romanDigit;
+                number -= digitValue;
+            }
         }
         return roman;
     }
