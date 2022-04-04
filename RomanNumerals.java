@@ -17,14 +17,10 @@ public class RomanNumerals {
     public static int parseRoman(String roman) {
         int number = 0;
 
-        String romanDigit;
-        int digitValue;
         for (RomanDigit rd : List.of(RomanDigit.IV, RomanDigit.I)) {
-            romanDigit = rd.name();
-            digitValue = rd.value;
-            while (roman.startsWith(romanDigit)) {
-                number += digitValue;
-                roman = roman.substring(romanDigit.length());
+            while (roman.startsWith(rd.name())) {
+                number += rd.value;
+                roman = roman.substring(rd.name().length());
             }
         }
         return number;
@@ -33,14 +29,10 @@ public class RomanNumerals {
     public static String toRoman(int number) {
         String roman = "";
 
-        String romanDigit;
-        int digitValue;
         for (RomanDigit rd : List.of(RomanDigit.IV, RomanDigit.I)) {
-            romanDigit = rd.name();
-            digitValue = rd.value;
-            while (number >= digitValue) {
-                roman += romanDigit;
-                number -= digitValue;
+            while (number >= rd.value) {
+                roman += rd.name();
+                number -= rd.value;
             }
         }
         return roman;
