@@ -3,6 +3,11 @@ public class RomanNumerals {
     public static int parseRoman(String roman) {
         int number = 0;
 
+        while (roman.startsWith("IV")) {
+            number += 4;
+            roman = roman.substring(2);
+        }
+
         while (roman.startsWith("I")) {
             number += 1;
             roman = roman.substring(1);
@@ -12,6 +17,11 @@ public class RomanNumerals {
 
     public static String toRoman(int number) {
         String roman = "";
+
+        while (number >= 4) {
+            roman += "IV";
+            number -= 4;
+        }
 
         while (number >= 1) {
             roman += "I";
