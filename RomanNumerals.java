@@ -29,5 +29,8 @@ public class RomanNumerals {
 
         assert 2 == parseRoman("II");
         assert "II".equals(toRoman(2));
+
+        assert 4 == parseRoman("IV");
+        assert "IV".equals(toRoman(4));
     }
 }
