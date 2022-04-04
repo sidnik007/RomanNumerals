@@ -1,11 +1,21 @@
 public class RomanNumerals {
 
     public static int parseRoman(final String roman) {
-        return 0;
+        int number = 0;
+
+        if (roman.equals("I")) {
+            number += 1;
+        }
+        return number;
     }
 
     public static String toRoman(final int number) {
-        return "";
+        String roman = "";
+
+        if (number == 1) {
+            roman += "I";
+        }
+        return roman;
     }
 
     public static void main(final String... args) {
