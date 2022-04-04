@@ -5,12 +5,12 @@ public class RomanNumerals {
 
         while (roman.startsWith("IV")) {
             number += 4;
-            roman = roman.substring(2);
+            roman = roman.substring("IV".length());
         }
 
         while (roman.startsWith("I")) {
             number += 1;
-            roman = roman.substring(1);
+            roman = roman.substring("I".length());
         }
         return number;
     }
