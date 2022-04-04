@@ -49,5 +49,8 @@ public class RomanNumerals {
 
         assert 4 == parseRoman("IV");
         assert "IV".equals(toRoman(4));
+
+        assert 5 == parseRoman("V");
+        assert "V".equals(toRoman(5));
     }
 }
