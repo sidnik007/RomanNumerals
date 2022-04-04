@@ -1,3 +1,15 @@
+enum RomanDigit{
+    IV(4),
+    I(1),
+    ;
+    
+    public final int value;
+
+    RomanDigit(final int value) {
+        this.value = value;
+    }
+}
+
 public class RomanNumerals {
 
     public static int parseRoman(String roman) {
@@ -6,16 +18,16 @@ public class RomanNumerals {
         String romanDigit;
         int digitValue;
         {
-            romanDigit = "IV";
-            digitValue = 4;
+            romanDigit = RomanDigit.IV.name();
+            digitValue = RomanDigit.IV.value;
             while (roman.startsWith(romanDigit)) {
                 number += digitValue;
                 roman = roman.substring(romanDigit.length());
             }
         }
         {
-            romanDigit = "I";
-            digitValue = 1;
+            romanDigit = RomanDigit.I.name();
+            digitValue = RomanDigit.I.value;
             while (roman.startsWith(romanDigit)) {
                 number += digitValue;
                 roman = roman.substring(romanDigit.length());
@@ -31,16 +43,16 @@ public class RomanNumerals {
         int digitValue;
 
         {
-            romanDigit = "IV";
-            digitValue = 4;
+            romanDigit = RomanDigit.IV.name();
+            digitValue = RomanDigit.IV.value;
             while (number >= digitValue) {
                 roman += romanDigit;
                 number -= digitValue;
             }
         }
         {
-            romanDigit = "I";
-            digitValue = 1;
+            romanDigit = RomanDigit.I.name();
+            digitValue = RomanDigit.I.value;
             while (number >= digitValue) {
                 roman += romanDigit;
                 number -= digitValue;
